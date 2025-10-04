@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8xm7g4gdrn2l"]
+
+[ext_resource type="Script" uid="uid://cj5676gcuhmv0" path="res://Scenes/Entities/player.gd" id="1_sys4n"]
+[ext_resource type="PackedScene" uid="uid://c10tlryb46h7k" path="res://Scenes/Entities/Card.tscn" id="2_bcs6i"]
+
+[node name="Player" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_sys4n")
+
+[node name="CardHolder" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Card" parent="CardHolder" instance=ExtResource("2_bcs6i")]
+y_sort_enabled = true
+
+[node name="Card2" parent="CardHolder" instance=ExtResource("2_bcs6i")]
+y_sort_enabled = true
+position = Vector2(30, 40)

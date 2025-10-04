@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=3 uid="uid://dv1klhj8iokeo"]
+
+[ext_resource type="Script" uid="uid://dnsmaa3k6r76r" path="res://Scenes/Main/Options/ResolutionOptions.gd" id="1_v35l7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_v35l7"]
+font_size = 86
+
+[node name="OptionSettings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ResolutionOptions" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 0
+script = ExtResource("1_v35l7")
+
+[node name="Label" type="Label" parent="HBoxContainer/ResolutionOptions"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Settings"
+label_settings = SubResource("LabelSettings_v35l7")
+horizontal_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="HBoxContainer/ResolutionOptions"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="FullScreenCheckBox" type="CheckBox" parent="HBoxContainer/ResolutionOptions"]
+layout_mode = 2
+text = "Full Screen"
+
+[connection signal="item_selected" from="HBoxContainer/ResolutionOptions/OptionButton" to="HBoxContainer/ResolutionOptions" method="_on_option_button_item_selected"]
+[connection signal="toggled" from="HBoxContainer/ResolutionOptions/FullScreenCheckBox" to="HBoxContainer/ResolutionOptions" method="_on_full_screen_check_box_toggled"]

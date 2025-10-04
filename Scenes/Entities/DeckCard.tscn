@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://cvlp2h0okp3re"]
+
+[ext_resource type="Script" uid="uid://88su0gf4b6h4" path="res://Scenes/Entities/deck_card.gd" id="1_5c0ya"]
+[ext_resource type="Texture2D" uid="uid://xsr4xpu0cl67" path="res://Sprites/deck_3.png" id="2_slerj"]
+[ext_resource type="Texture2D" uid="uid://c4uva7ks7bdny" path="res://Sprites/deck_4.png" id="3_tw5kx"]
+[ext_resource type="Texture2D" uid="uid://c3c0lgefphvt5" path="res://Sprites/deck_1.png" id="4_7gejy"]
+[ext_resource type="Texture2D" uid="uid://bpx6kwt0dfcxb" path="res://Sprites/deck_2.png" id="5_87u1r"]
+[ext_resource type="PackedScene" uid="uid://c10tlryb46h7k" path="res://Scenes/Entities/Card.tscn" id="6_m8a2o"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_04osb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_slerj")
+}],
+"loop": true,
+"name": &"AlmostEmptyDeck",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_tw5kx")
+}],
+"loop": true,
+"name": &"EmptyDeck",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_7gejy")
+}],
+"loop": true,
+"name": &"FullDeck",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_87u1r")
+}],
+"loop": true,
+"name": &"HalfDeck",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="DeckCard" type="Node2D"]
+script = ExtResource("1_5c0ya")
+
+[node name="Stockpile" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_04osb")
+animation = &"FullDeck"
+
+[node name="Card" parent="." instance=ExtResource("6_m8a2o")]
+visible = false
+position = Vector2(130, 0)
