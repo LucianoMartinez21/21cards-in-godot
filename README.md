@@ -13,4 +13,8 @@ Things to fix are:
 * **Coding: Luciano Martínez**
 * **Art by Gerson Marcelo: https://gersonmarcelo.itch.io/gems-spritesheets & https://es.fiverr.com/gersonmarcel544**
 * **Super Video Poker Cards: https://www.spriters-resource.com/pc_computer/supervideopoker/asset/173690/**
+* **Shaders used in this project are found in godotshaders**
+* **Blinking shader made by kostilus: https://godotshaders.com/shader/flashing-overlay-shader/**
+* **Shine shader made by KingToot: https://godotshaders.com/shader/shine/**
+
 I don't claim any ownership of the card design made in this project.
